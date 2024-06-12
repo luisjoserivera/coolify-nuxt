@@ -9,9 +9,36 @@ export default defineNuxtConfig({
   },
 
   css: [
-    // "@fortawesome/fontawesome-svg-core/styles.css",
+    "@fortawesome/fontawesome-svg-core/styles.css",
     "@/assets/scss/global.scss",
   ],
+
+  vite: {
+    css: {
+      preprocessorOptions: {
+        sass: {
+          additionalData: '@use "@/assets/scss/variables.scss" as *;',
+          // additionalData: '@import "@/assets/scss/variables.scss";',
+          // additionalData: '@import "~/assets/scss/variables.scss";',
+        },
+        scss: {
+          additionalData: '@use "@/assets/scss/variables.scss" as *;',
+          // additionalData: '@import "@/assets/scss/variables.scss";',
+          // additionalData: '@import "~/assets/scss/variables.scss";',
+        },
+      },
+    },
+  },
+
+  build: {
+    transpile: [
+      "@fortawesome/vue-fontawesome",
+      "@fortawesome/fontawesome-svg-core",
+      "@fortawesome/free-brands-svg-icons",
+      "@fortawesome/free-regular-svg-icons",
+      "@fortawesome/free-solid-svg-icons",
+    ],
+  },
 
   nitro: {
     // preset: "firebase",
