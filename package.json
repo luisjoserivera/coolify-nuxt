@@ -19,6 +19,7 @@
     "@picocss/pico": "^1.5.13",
     "@pinia/nuxt": "^0.5.1",
     "firebase-admin": "^12.1.1",
+    "gsap": "^3.12.5",
     "lodash": "^4.17.21",
     "node-sass": "^9.0.0",
     "nuxt": "^3.12.1",
