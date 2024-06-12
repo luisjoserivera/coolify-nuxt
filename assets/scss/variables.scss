@@ -1,0 +1,57 @@
+// Set the root element
+$semantic-root-element: "#root";
+
+// Enable <header>, <main>, <footer> inside $semantic-root-element as containers
+$enable-semantic-container: true;
+
+// $enable-responsive-typography: true;
+
+// Enable .classes
+$enable-classes: true;
+
+$color-B: #ec3c2d;
+$color-I: #1589f6;
+$color-N: #ffa806;
+$color-G: #1ae043;
+$color-O: #c427ff;
+
+$color-purple-mid: #983951;
+$color-purple-mid: #af00b5;
+$color-purple-mid: #741483;
+$color-purple-mid: #7f1483;
+
+$color-purple-dark: #141069;
+$color-purple-dark: #27004a;
+
+$color-red-bright: #ff0051;
+
+$color-orange-bright: rgb(255,110,0);
+
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1440px;
+$xxxl: 1584px;
+
+$breakpoints: (
+  xs: 0,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl,
+  xxl: $xxl,
+  xxxl: $xxxl,
+);
+
+// Viewports
+$viewports: (
+  // 'null' disable the viewport on a breakpoint
+  sm: 510px,
+  md: 700px,
+  lg: 920px,
+  xl: 1130px,
+  xxl: 1300px,
+  xxxl: 1300px,
+);

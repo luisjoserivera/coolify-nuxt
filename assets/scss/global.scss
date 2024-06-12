@@ -1,0 +1,141 @@
+// @import "functions.scss";
+
+// Import full pico
+// @import "@picocss/pico/scss/pico.scss";
+
+// Customize pico
+// Config
+@import "@picocss/pico/scss/variables";
+// @import "variables.scss";
+
+// Layout
+@import "@picocss/pico/scss/layout/document"; // html
+@import "@picocss/pico/scss/layout/sectioning"; // body, header, main, footer
+@import "@picocss/pico/scss/layout/container"; // .container, .container-fluid
+@import "@picocss/pico/scss/layout/section"; // section
+@import "@picocss/pico/scss/layout/grid"; // .grid
+@import "@picocss/pico/scss/layout/scroller"; // figure
+
+// Content
+@import "@picocss/pico/scss/content/typography"; // a, headings, p, ul, blockquote, ...
+@import "@picocss/pico/scss/content/embedded"; // audio, canvas, iframe, img, svg, video
+@import "content/button"; // button, a[role=button], type=button, type=submit ...
+@import "@picocss/pico/scss/content/form"; // input, select, textarea, label, fieldset, legend
+@import "@picocss/pico/scss/content/form-checkbox-radio"; // type=checkbox, type=radio, role=switch
+@import "@picocss/pico/scss/content/form-alt-input-types"; // type=color, type=date, type=file, type=search, ...
+@import "@picocss/pico/scss/content/table"; // table, tr, td, ...
+@import "@picocss/pico/scss/content/code"; // pre, code, ...
+@import "@picocss/pico/scss/content/miscs"; // hr, template, [hidden], dialog, canvas
+
+// Components
+@import "@picocss/pico/scss/components/accordion"; // details, summary
+@import "@picocss/pico/scss/components/card"; // article
+@import "@picocss/pico/scss/components/modal"; // dialog
+@import "@picocss/pico/scss/components/nav"; // nav
+@import "@picocss/pico/scss/components/progress"; // progress
+@import "@picocss/pico/scss/components/dropdown"; // dropdown
+
+// Utilities
+@import "@picocss/pico/scss/utilities/loading"; // aria-busy=true
+@import "@picocss/pico/scss/utilities/tooltip"; // data-tooltip
+// @import "@picocss/pico/scss/utilities/accessibility"; // -ms-touch-action, aria-*
+@import "utilities/accessibility"; // -ms-touch-action, aria-*
+@import "@picocss/pico/scss/utilities/reduce-motion"; // prefers-reduced-motion
+
+// Theming
+// @import "@picocss/pico/scss/themes/default";
+@import "themes/default";
+
+@import "animations";
+
+:root {
+  --color-B: #{$color-B};
+  --color-I: #{$color-I};
+  --color-N: #{$color-N};
+  --color-G: #{$color-G};
+  --color-O: #{$color-O};
+
+  --1px: max(1px, 0.0625em);
+  --2px: max(2px, 0.0125em);
+  --3px: max(3px, 0.1875em);
+  --4px: max(4px, 0.25em);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  margin: 0;
+}
+
+pre {
+  margin: 0;
+}
+
+:root {
+  position: relative;
+  z-index: -1;
+
+  // $color-purple-mid: #b5b500;
+  // $color-purple-mid: #ff00d1;
+  background-color: $color-purple-mid;
+  // background: linear-gradient(rgba(54, 17, 51, 0), #351132);
+  // background: linear-gradient(#983951, #351132);
+  &::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-size: 2.5em;
+    background-size: 10vmin;
+    background-image: url(~/assets/img/pattern1-white.png);
+    background-repeat: repeat;
+    opacity: 0.03;
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // width: 100%;
+    // height: 100%;
+    background: linear-gradient(
+      rgba($color-purple-mid, 1),
+      rgba(#351132, 0.5) 30%
+    );
+    background: linear-gradient(
+      rgba($color-purple-mid, 1),
+      rgba($color-purple-dark, 0.5) 70%
+    );
+    background: linear-gradient(
+      rgba($color-purple-mid, 1),
+      rgba($color-purple-dark, 0.5) 70%,
+      $color-purple-dark 100%
+    );
+    background: linear-gradient(
+      rgba($color-purple-mid, 1),
+      rgba($color-purple-dark, 0.5) 50%,
+      $color-purple-dark 100%
+    );
+    z-index: -1;
+    // mix-blend-mode: soft-light;
+  }
+}
+
+.matchLayout {
+  .title {
+    --font-size: 1.5em;
+    font-weight: bold;
+    font-size: var(--font-size);
+    margin-bottom: 0.5em;
+  }
+}

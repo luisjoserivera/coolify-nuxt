@@ -8,6 +8,11 @@ export default defineNuxtConfig({
     "/_ipx/**": { prerender: true },
   },
 
+  css: [
+    // "@fortawesome/fontawesome-svg-core/styles.css",
+    "@/assets/scss/global.scss",
+  ],
+
   nitro: {
     // preset: "firebase",
     // firebase: {

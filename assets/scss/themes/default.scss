@@ -1,0 +1,56 @@
+/**
+ * Theme: default
+ */
+
+// Variables
+@import "../variables";
+
+// // Commons styles
+@import "default/colors";
+@import "default/styles";
+@import "default/light";
+@import "default/dark";
+
+// Light theme (Default)
+// Can be forced with data-theme="light"
+
+[data-theme="light"],
+[data-theme="dark"] .theme-invert,
+:root:not([data-theme="dark"]),
+:root:not([data-theme="light"]) .theme-invert {
+  @include light;
+}
+
+// [data-theme="light"],
+// :root:not([data-theme="dark"]) {
+//   @include light;
+//   .theme-invert {
+//     @include dark;
+//   }
+// }
+
+// Dark theme (Auto)
+// Automatically enabled if user has Dark mode enabled
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include dark;
+    .theme-invert {
+      @include light;
+    }
+  }
+}
+
+// Dark theme (Forced)
+// Enabled if forced with data-theme="dark"
+[data-theme="dark"],
+[data-theme="light"] .theme-invert {
+  @include dark;
+}
+
+// Accent-color
+progress,
+[type="checkbox"],
+[type="radio"],
+[type="range"] {
+  accent-color: var(--primary);
+}
