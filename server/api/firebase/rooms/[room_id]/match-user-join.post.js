@@ -1,5 +1,5 @@
 import { getDatabase } from "firebase-admin/database";
-import { useCard } from "../../../../../composables/useCard";
+// import { useCard } from "#imports";
 
 export default defineEventHandler(async (event) => {
   const userID = event.context.userID;
@@ -33,8 +33,6 @@ export default defineEventHandler(async (event) => {
 
   const matchCards = roomData?.matchCurrent?.matchCards || {};
   // const cardKeys = Object.keys(matchCards);
-
-  const { generateBingoCard } = useCard();
 
   function recursiveGenerateCard(currentCards) {
     const newCard = generateBingoCard();

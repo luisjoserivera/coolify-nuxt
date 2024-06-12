@@ -1,5 +1,4 @@
 import { getDatabase } from "firebase-admin/database";
-import { useCard } from "../../../../../composables/useCard";
 
 export default defineEventHandler(async (event) => {
   const userID = event.context.userID;
