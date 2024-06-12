@@ -8,6 +8,38 @@ export default defineNuxtConfig({
     "/_ipx/**": { prerender: true },
   },
 
+  runtimeConfig: {
+    public: {
+      apiKey: process.env.FIREBASE_API_KEY,
+      authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+      databaseURL: process.env.FIREBASE_DATABASE_URL,
+      projectId: process.env.FIREBASE_PROJECT_ID,
+      storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+      appId: process.env.FIREBASE_APP_ID,
+      //
+      firebaseAuthCookie: {
+        /**
+         * Only `__session` is permitted if you need to read cookies from GET requests
+         * https://firebase.google.com/docs/hosting/manage-cache
+         *
+         * It reads as follows:
+         * When using Firebase Hosting together with Cloud Functions or
+         * Cloud Run, cookies are generally stripped from incoming requests.
+         * This is necessary to allow for efficient CDN cache behavior.
+         * Only the specially-named __session cookie is permitted to pass
+         * through to the execution of your app.
+         */
+        name: "__session",
+        lifetime: 60 * 60 * 8, // 8 hours
+        // lifetime: 10,
+        domain: "",
+        path: "/",
+        sameSite: "lax",
+      },
+    },
+  },
+
   css: [
     "@fortawesome/fontawesome-svg-core/styles.css",
     "@/assets/scss/global.scss",
